@@ -821,3 +821,31 @@ body::before {
     grid-template-columns: 1fr
   }
 }
+/* ✅ FIX ALIGNEMENT - Section 6 Steps */
+.steps .step{
+  display: grid;
+  grid-template-columns: 38px 1fr; /* colonne fixe pour le numéro */
+  align-items: start;             /* aligne tout en haut */
+  column-gap: 14px;
+}
+
+.steps .step .step-n{
+  width: 38px;
+  height: 38px;
+  justify-self: start;
+  align-self: start;              /* force le numéro à rester en haut */
+  margin-top: 2px;                /* micro-ajustement visuel (optionnel) */
+}
+
+.steps .step > div{
+  min-width: 0;                   /* évite les décalages/overflow */
+}
+
+.steps .step h3{
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.steps .step p{
+  margin: 0;
+}
