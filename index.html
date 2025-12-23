@@ -1,76 +1,265 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>GeniusLab - Créez votre Startup Sans Coder</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>GeniusLab — Créez votre startup sans coder</title>
+
+  <meta name="description" content="GeniusLab : formation premium en Suisse pour créer votre startup sans coder grâce à l’IA. Sélection de 12 participants." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <img src="logo.png" alt="GeniusLab Logo" class="logo">
-      <h1>Créez votre Startup sans Coder, Grâce à l'IA</h1>
-      <p>Un programme exclusif pour transformer votre idée en entreprise avec des outils simples et puissants.</p>
-      <a href="#formulaire" class="cta-button">Postuler Maintenant</a>
+  <!-- Topbar -->
+  <nav class="topbar" aria-label="Navigation principale">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="Aller en haut de page">
+        <img src="logo.png" alt="GeniusLab" class="brand-logo" />
+      </a>
+
+      <div class="topbar-actions">
+        <a class="toplink" href="#programme">Programme</a>
+        <a class="toplink" href="#process">Process</a>
+        <a class="toplink" href="#formulaire">Candidature</a>
+        <a class="btn btn-ghost" href="#formulaire">Postuler</a>
+      </div>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="top" class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>Formation en salle · Suisse · 12 places / session</span>
+      </div>
+
+      <h1>
+        Créez votre startup <span class="text-grad">sans coder</span><br />
+        grâce à l’IA.
+      </h1>
+
+      <p class="hero-sub">
+        Un parcours “do it yourself” guidé, premium et concret : vous repartez avec une
+        base solide (landing, offre, système d’acquisition) et un plan clair pour lancer.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#formulaire">Passer le QCM (sélection)</a>
+        <a class="btn btn-secondary" href="#programme">Voir le programme</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-top">Format</div>
+          <div class="stat-main">Demi-journée</div>
+          <div class="stat-sub">Ateliers + coaching</div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">Accès</div>
+          <div class="stat-main">Sélectif</div>
+          <div class="stat-sub">Candidature via QCM</div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">Prix</div>
+          <div class="stat-main">300 CHF</div>
+          <div class="stat-sub">+ 15% bénéfices*</div>
+        </div>
+      </div>
+
+      <p class="fineprint">
+        *Détails contractuels à définir (bénéfices nets, durée, périmètre). Transparence totale avant engagement.
+      </p>
+    </div>
+
+    <div class="hero-glow" aria-hidden="true"></div>
   </header>
 
-  <!-- Pourquoi GeniusLab -->
-  <section class="features">
-    <div class="container">
-      <h2>Pourquoi choisir GeniusLab ?</h2>
-      <ul>
-        <li>Créer votre site sans coder</li>
-        <li>Automatiser votre entreprise avec l'IA</li>
-        <li>Formation pratique en petits groupes</li>
-        <li>Accédez à des outils innovants et sans code</li>
-      </ul>
+  <!-- Social proof -->
+  <section class="strip">
+    <div class="strip-inner">
+      <div class="strip-item">⚡ Sans code</div>
+      <div class="strip-item">🤖 IA appliquée</div>
+      <div class="strip-item">🎯 Acquisition & offre</div>
+      <div class="strip-item">🧠 Méthode claire</div>
+      <div class="strip-item">🇨🇭 En présentiel</div>
     </div>
   </section>
 
-  <!-- Témoignages -->
-  <section class="testimonials">
+  <!-- Programme -->
+  <section id="programme" class="section">
     <div class="container">
-      <h2>Ce que nos étudiants disent</h2>
-      <div class="testimonial">
-        <p>"Grâce à GeniusLab, j'ai pu lancer ma startup en un rien de temps, sans aucune connaissance en codage !" - Maxime D.</p>
+      <div class="section-head">
+        <h2>Ce que vous construisez avec GeniusLab</h2>
+        <p>Pas de théorie inutile : du concret, guidé, avec des livrables.</p>
       </div>
-      <div class="testimonial">
-        <p>"Un programme incroyable et très pratique ! L’IA m’a vraiment aidé à concrétiser mon projet." - Clara L.</p>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-icon">🧩</div>
+          <h3>Offre & positionnement</h3>
+          <p>Proposition de valeur, cible, promesse, pricing, angle marketing.</p>
+          <ul class="ticks">
+            <li>ICP + message</li>
+            <li>Offre “simple à vendre”</li>
+            <li>Roadmap 30 jours</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🚀</div>
+          <h3>Landing + conversion</h3>
+          <p>Une landing page qui convertit (structure, copywriting, CTA, preuve).</p>
+          <ul class="ticks">
+            <li>Structure premium</li>
+            <li>Copywriting IA</li>
+            <li>Tracking basique</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🛰️</div>
+          <h3>Acquisition & système</h3>
+          <p>Un canal d’acquisition clair + automatisations (mailing, suivi, relances).</p>
+          <ul class="ticks">
+            <li>Brevo (mailing)</li>
+            <li>Process sélection</li>
+            <li>Plan de contenu</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Formulaire d'inscription -->
-  <section id="formulaire" class="form-section">
+  <!-- Process -->
+  <section id="process" class="section section-alt">
     <div class="container">
-      <h2>Rejoignez notre programme exclusif</h2>
-      <p>Répondez à quelques questions pour postuler à notre formation GeniusLab.</p>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required>
+      <div class="section-head">
+        <h2>Le process exclusif (simple et “premium”) </h2>
+        <p>On rend le parcours fluide, mais sélectif — pour garder un groupe de haut niveau.</p>
+      </div>
 
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="motivation">Pourquoi voulez-vous créer une startup ?</label>
-        <textarea id="motivation" name="motivation" required></textarea>
-
-        <button type="submit" class="cta-button">Soumettre</button>
-      </form>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">1</div>
+          <div>
+            <h3>QCM sur la landing</h3>
+            <p>Vous candidatez en 2–3 minutes. Objectif : motivation + capacité d’exécution.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div>
+            <h3>Email de sélection (Brevo)</h3>
+            <p>Si retenu : email “vous êtes sélectionné” + accès au choix des dates.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <div>
+            <h3>Doodle : vos 3 meilleures dates</h3>
+            <p>Vous choisissez 3 créneaux. On confirme la session finale par email.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">4</div>
+          <div>
+            <h3>Présentiel en Suisse</h3>
+            <p>Demi-journée en petit comité (12) : atelier + plan d’action + next steps.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- Testimonials -->
+  <section class="section">
     <div class="container">
-      <p>&copy; 2025 GeniusLab. Tous droits réservés.</p>
+      <div class="section-head">
+        <h2>Ils veulent aller vite (sans se perdre)</h2>
+        <p>Exemples de retours (à remplacer par les vrais dès que tu en as).</p>
+      </div>
+
+      <div class="grid-2">
+        <figure class="quote">
+          <blockquote>“Enfin une méthode claire : j’ai compris quoi construire, dans quel ordre, et avec quels outils.”</blockquote>
+          <figcaption>— Participant (bêta)</figcaption>
+        </figure>
+
+        <figure class="quote">
+          <blockquote>“Le côté sélectif change tout : on est entouré de gens sérieux, ça pousse à exécuter.”</blockquote>
+          <figcaption>— Participant (bêta)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section id="formulaire" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Candidature (QCM)</h2>
+        <p>Répondez au QCM. Si vous êtes sélectionné, vous recevez le lien Doodle par email.</p>
+      </div>
+
+      <div class="form-wrap">
+        <!-- Option A : intégrer Tally en iframe (recommandé) -->
+        <!-- Remplace l'URL par ton lien Tally "embed" -->
+        <iframe
+          class="tally"
+          data-tally-src="https://tally.so/r/TON_ID_TALLY"
+          loading="lazy"
+          width="100%"
+          height="720"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Candidature GeniusLab">
+        </iframe>
+
+        <!-- Option B : si tu préfères un bouton vers Tally -->
+        <!-- <a class="btn btn-primary" href="https://tally.so/r/TON_ID_TALLY" target="_blank" rel="noreferrer">Ouvrir le QCM</a> -->
+      </div>
+
+      <p class="fineprint center">
+        En envoyant votre candidature, vous acceptez d’être contacté par email pour la sélection et la planification.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="logo.png" alt="GeniusLab" class="footer-logo" />
+        <div class="footer-meta">
+          <div class="footer-title">GeniusLab</div>
+          <div class="footer-sub">Créez votre startup sans coder</div>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <a class="footer-link" href="#programme">Programme</a>
+        <a class="footer-link" href="#process">Process</a>
+        <a class="footer-link" href="#formulaire">Candidature</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2025 GeniusLab. Tous droits réservés.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <!-- Tally embed helper (si iframe data-tally-src) -->
+  <script>
+    (function () {
+      var d = document, w = window;
+      var s = d.createElement("script");
+      s.src = "https://tally.so/widgets/embed.js";
+      s.async = true;
+      d.body.appendChild(s);
+    })();
+  </script>
 </body>
 </html>
