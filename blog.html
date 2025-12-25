@@ -74,10 +74,18 @@
     <section class="section">
         <div class="container" style="max-width: 1100px;">
 
+            <!-- Category Filters -->
+            <div class="blog-filters">
+                <button class="filter-btn active" data-category="all">Tous les articles</button>
+                <button class="filter-btn" data-category="No-Code">No-Code</button>
+                <button class="filter-btn" data-category="Intelligence Artificielle">Intelligence Artificielle</button>
+                <button class="filter-btn" data-category="Suisse">Suisse</button>
+            </div>
+
             <div class="blog-grid">
 
                 <!-- Article 1 -->
-                <article class="blog-card">
+                <article class="blog-card" data-category="No-Code">
                     <div class="blog-meta">
                         <span class="blog-date">📅 25 décembre 2025</span>
                         <span class="blog-category">No-Code</span>
@@ -89,7 +97,7 @@
                 </article>
 
                 <!-- Article 2 -->
-                <article class="blog-card">
+                <article class="blog-card" data-category="Intelligence Artificielle">
                     <div class="blog-meta">
                         <span class="blog-date">📅 25 décembre 2025</span>
                         <span class="blog-category">Intelligence Artificielle</span>
@@ -102,7 +110,7 @@
                 </article>
 
                 <!-- Article 3 -->
-                <article class="blog-card">
+                <article class="blog-card" data-category="Suisse">
                     <div class="blog-meta">
                         <span class="blog-date">📅 25 décembre 2025</span>
                         <span class="blog-category">Suisse</span>
@@ -149,6 +157,39 @@
     </footer>
 
     <style>
+        /* Category Filters */
+        .blog-filters {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: rgba(17, 24, 39, .75);
+            border: 1px solid rgba(168, 85, 247, .14);
+            border-radius: 50px;
+            color: rgba(249, 250, 251, .9);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: rgba(34, 211, 238, .35);
+            background: rgba(34, 211, 238, .1);
+        }
+
+        .filter-btn.active {
+            background: var(--g3);
+            border-color: transparent;
+            color: white;
+        }
+
+        /* Blog Grid */
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -161,12 +202,16 @@
             border: 1px solid rgba(168, 85, 247, .14);
             border-radius: var(--r-lg);
             padding: 28px;
-            transition: transform .2s ease, border-color .2s ease;
+            transition: transform .2s ease, border-color .2s ease, opacity .3s ease;
         }
 
         .blog-card:hover {
             transform: translateY(-4px);
             border-color: rgba(34, 211, 238, .35);
+        }
+
+        .blog-card.hidden {
+            display: none;
         }
 
         .blog-meta {
@@ -215,8 +260,44 @@
             .blog-grid {
                 grid-template-columns: 1fr;
             }
+
+            .blog-filters {
+                gap: 8px;
+            }
+
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
         }
     </style>
+
+    <script>
+        // Category filtering functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const selectedCategory = btn.dataset.category;
+
+                blogCards.forEach(card => {
+                    const cardCategory = card.dataset.category;
+
+                    if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
