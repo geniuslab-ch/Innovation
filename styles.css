@@ -821,32 +821,38 @@ body::before {
     grid-template-columns: 1fr
   }
 }
+
 /* ✅ FIX ALIGNEMENT - Section 6 Steps */
-.steps .step{
+.steps .step {
   display: grid;
-  grid-template-columns: 38px 1fr; /* colonne fixe pour le numéro */
-  align-items: start;             /* aligne tout en haut */
+  grid-template-columns: 38px 1fr;
+  /* colonne fixe pour le numéro */
+  align-items: start;
+  /* aligne tout en haut */
   column-gap: 14px;
 }
 
-.steps .step .step-n{
+.steps .step .step-n {
   width: 38px;
   height: 38px;
   justify-self: start;
-  align-self: start;              /* force le numéro à rester en haut */
-  margin-top: 2px;                /* micro-ajustement visuel (optionnel) */
+  align-self: start;
+  /* force le numéro à rester en haut */
+  margin-top: 2px;
+  /* micro-ajustement visuel (optionnel) */
 }
 
-.steps .step > div{
-  min-width: 0;                   /* évite les décalages/overflow */
+.steps .step>div {
+  min-width: 0;
+  /* évite les décalages/overflow */
 }
 
-.steps .step h3{
+.steps .step h3 {
   margin: 0 0 4px 0;
   line-height: 1.2;
 }
 
-.steps .step p{
+.steps .step p {
   margin: 0;
 }
 
@@ -857,7 +863,7 @@ body::before {
   display: flex;
   align-items: center;
   padding: 100px 0 60px;
-  background: linear-gradient(135deg, rgba(34,211,238,.15), rgba(168,85,247,.10));
+  background: linear-gradient(135deg, rgba(34, 211, 238, .15), rgba(168, 85, 247, .10));
 }
 
 .payment-hero-content {
@@ -871,8 +877,8 @@ body::before {
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: rgba(34,211,238,.15);
-  border: 1px solid rgba(34,211,238,.3);
+  background: rgba(34, 211, 238, .15);
+  border: 1px solid rgba(34, 211, 238, .3);
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -889,7 +895,7 @@ body::before {
 
 .payment-subtitle {
   font-size: 1.1rem;
-  color: rgba(249,250,251,.8);
+  color: rgba(249, 250, 251, .8);
   margin-top: 12px;
 }
 
@@ -907,8 +913,8 @@ body::before {
 }
 
 .summary-card {
-  background: rgba(17,24,39,.75);
-  border: 1px solid rgba(168,85,247,.14);
+  background: rgba(17, 24, 39, .75);
+  border: 1px solid rgba(168, 85, 247, .14);
   border-radius: var(--r-lg);
   padding: 24px;
   box-shadow: var(--shadow);
@@ -957,21 +963,21 @@ body::before {
 }
 
 .detail-content p {
-  color: rgba(249,250,251,.85);
+  color: rgba(249, 250, 251, .85);
   margin: 0;
   line-height: 1.5;
 }
 
 .detail-content small {
   display: block;
-  color: rgba(249,250,251,.65);
+  color: rgba(249, 250, 251, .65);
   font-size: 0.85rem;
   margin-top: 4px;
 }
 
 .summary-divider {
   height: 1px;
-  background: rgba(168,85,247,.2);
+  background: rgba(168, 85, 247, .2);
   margin: 20px 0;
 }
 
@@ -992,7 +998,7 @@ body::before {
   font-size: 1.2rem;
   font-weight: 700;
   padding-top: 12px;
-  border-top: 2px solid rgba(168,85,247,.3);
+  border-top: 2px solid rgba(168, 85, 247, .3);
 }
 
 .price {
@@ -1021,7 +1027,7 @@ body::before {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  background: rgba(17,24,39,.5);
+  background: rgba(17, 24, 39, .5);
   border-radius: var(--r-md);
 }
 
@@ -1037,20 +1043,20 @@ body::before {
 
 .trust-item p {
   font-size: 0.85rem;
-  color: rgba(249,250,251,.7);
+  color: rgba(249, 250, 251, .7);
   margin: 0;
 }
 
 .payment-card {
-  background: rgba(17,24,39,.75);
-  border: 1px solid rgba(168,85,247,.14);
+  background: rgba(17, 24, 39, .75);
+  border: 1px solid rgba(168, 85, 247, .14);
   border-radius: var(--r-lg);
   padding: 32px;
   box-shadow: var(--shadow);
 }
 
 .payment-description {
-  color: rgba(249,250,251,.75);
+  color: rgba(249, 250, 251, .75);
   margin-bottom: 24px;
   line-height: 1.6;
 }
@@ -1069,8 +1075,8 @@ body::before {
 .form-group input {
   width: 100%;
   padding: 12px 16px;
-  background: rgba(17,24,39,.8);
-  border: 1px solid rgba(168,85,247,.2);
+  background: rgba(17, 24, 39, .8);
+  border: 1px solid rgba(168, 85, 247, .2);
   border-radius: var(--r-md);
   color: var(--text);
   font-size: 1rem;
@@ -1079,26 +1085,26 @@ body::before {
 
 .form-group input:focus {
   outline: none;
-  border-color: rgba(34,211,238,.5);
+  border-color: rgba(34, 211, 238, .5);
 }
 
 .form-group small {
   display: block;
-  color: rgba(249,250,251,.65);
+  color: rgba(249, 250, 251, .65);
   font-size: 0.85rem;
   margin-top: 6px;
 }
 
 .form-notice {
-  background: rgba(34,211,238,.1);
-  border-left: 3px solid rgba(34,211,238,.5);
+  background: rgba(34, 211, 238, .1);
+  border-left: 3px solid rgba(34, 211, 238, .5);
   padding: 12px 16px;
   border-radius: var(--r-md);
   margin-bottom: 24px;
 }
 
 .form-notice p {
-  color: rgba(249,250,251,.85);
+  color: rgba(249, 250, 251, .85);
   font-size: 0.9rem;
   margin: 0;
   line-height: 1.5;
@@ -1112,7 +1118,7 @@ body::before {
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 2px solid rgba(255,255,255,.3);
+  border: 2px solid rgba(255, 255, 255, .3);
   border-top-color: white;
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
@@ -1123,20 +1129,22 @@ body::before {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .payment-security {
   margin-top: 24px;
   padding: 16px;
-  background: rgba(34,211,238,.08);
+  background: rgba(34, 211, 238, .08);
   border-radius: var(--r-md);
   text-align: center;
 }
 
 .payment-security p {
   font-size: 0.9rem;
-  color: rgba(249,250,251,.75);
+  color: rgba(249, 250, 251, .75);
   margin: 0;
   line-height: 1.5;
 }
@@ -1148,7 +1156,7 @@ body::before {
   display: flex;
   align-items: center;
   padding: 80px 0;
-  background: linear-gradient(135deg, rgba(34,211,238,.15), rgba(168,85,247,.10));
+  background: linear-gradient(135deg, rgba(34, 211, 238, .15), rgba(168, 85, 247, .10));
 }
 
 .confirmation-content {
@@ -1168,13 +1176,20 @@ body::before {
   justify-content: center;
   font-size: 3.5rem;
   color: white;
-  box-shadow: 0 20px 60px rgba(34,211,238,.4);
+  box-shadow: 0 20px 60px rgba(34, 211, 238, .4);
   animation: bounce 0.6s ease-in-out;
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .confirmation-hero h1 {
@@ -1184,13 +1199,13 @@ body::before {
 
 .confirmation-subtitle {
   font-size: 1.2rem;
-  color: rgba(249,250,251,.8);
+  color: rgba(249, 250, 251, .8);
   margin-bottom: 40px;
 }
 
 .confirmation-card {
-  background: rgba(17,24,39,.75);
-  border: 1px solid rgba(168,85,247,.14);
+  background: rgba(17, 24, 39, .75);
+  border: 1px solid rgba(168, 85, 247, .14);
   border-radius: var(--r-lg);
   padding: 32px;
   box-shadow: var(--shadow);
@@ -1203,8 +1218,8 @@ body::before {
   margin-bottom: 12px;
 }
 
-.confirmation-card > p {
-  color: rgba(249,250,251,.8);
+.confirmation-card>p {
+  color: rgba(249, 250, 251, .8);
   margin-bottom: 24px;
   line-height: 1.6;
 }
@@ -1214,7 +1229,7 @@ body::before {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding-top: 20px;
-  border-top: 1px solid rgba(168,85,247,.2);
+  border-top: 1px solid rgba(168, 85, 247, .2);
 }
 
 .detail-item {
@@ -1225,7 +1240,7 @@ body::before {
 
 .detail-label {
   font-size: 0.9rem;
-  color: rgba(249,250,251,.65);
+  color: rgba(249, 250, 251, .65);
   font-weight: 600;
 }
 
@@ -1253,8 +1268,8 @@ body::before {
 }
 
 .step-card {
-  background: rgba(17,24,39,.70);
-  border: 1px solid rgba(168,85,247,.14);
+  background: rgba(17, 24, 39, .70);
+  border: 1px solid rgba(168, 85, 247, .14);
   border-radius: var(--r-lg);
   padding: 24px;
   text-align: center;
@@ -1263,7 +1278,7 @@ body::before {
 
 .step-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(34,211,238,.35);
+  border-color: rgba(34, 211, 238, .35);
 }
 
 .step-number {
@@ -1285,14 +1300,14 @@ body::before {
 }
 
 .step-card p {
-  color: rgba(249,250,251,.75);
+  color: rgba(249, 250, 251, .75);
   line-height: 1.6;
   font-size: 0.95rem;
 }
 
 .contact-info {
-  background: rgba(17,24,39,.70);
-  border: 1px solid rgba(168,85,247,.14);
+  background: rgba(17, 24, 39, .70);
+  border: 1px solid rgba(168, 85, 247, .14);
   border-radius: var(--r-lg);
   padding: 32px;
 }
@@ -1302,8 +1317,8 @@ body::before {
   margin-bottom: 10px;
 }
 
-.contact-info > p {
-  color: rgba(249,250,251,.75);
+.contact-info>p {
+  color: rgba(249, 250, 251, .75);
   margin-bottom: 24px;
 }
 
@@ -1314,18 +1329,27 @@ body::before {
   flex-wrap: wrap;
 }
 
+.contact-buttons .btn {
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+}
+
+
 /* Responsive for payment and confirmation pages */
 @media (max-width: 900px) {
   .payment-layout {
     grid-template-columns: 1fr;
   }
-  
+
   .confirmation-details {
     grid-template-columns: 1fr;
   }
-  
+
   .steps-grid {
     grid-template-columns: 1fr;
   }
 }
+
 /* Version 1.0.1 - Thu Dec 25 10:46:30 CET 2025 */
