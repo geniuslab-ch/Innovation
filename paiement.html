@@ -1,1 +1,242 @@
-fatal: path 'paiement.html' exists on disk, but not in '5b67b3e'
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement - Formation Innovation & Entrepreneuriat | GeniusLab</title>
+    <meta name="description" content="Finalisez votre inscription à la formation Innovation & Entrepreneuriat">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <a href="index.html" class="brand">
+                <img src="logo.png" alt="GeniusLab Logo" class="brand-logo">
+            </a>
+            <div class="topbar-actions">
+                <a href="index.html" class="toplink">← Retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Hero -->
+    <section class="payment-hero">
+        <div class="container">
+            <div class="payment-hero-content">
+                <div class="success-badge">
+                    <span class="dot"></span>
+                    Félicitations ! Vous avez été sélectionné(e)
+                </div>
+                <h1>Finalisez votre inscription</h1>
+                <p class="payment-subtitle">Vous êtes à une étape de rejoindre la formation Innovation & Entrepreneuriat
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Content -->
+    <section class="section">
+        <div class="container">
+            <div class="payment-layout">
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2>Récapitulatif de votre commande</h2>
+
+                    <div class="summary-card">
+                        <div class="summary-header">
+                            <h3>Formation Innovation & Entrepreneuriat</h3>
+                            <div class="formation-badge">Programme complet</div>
+                        </div>
+
+                        <div class="summary-details">
+                            <div class="detail-row">
+                                <span class="detail-icon">📅</span>
+                                <div class="detail-content">
+                                    <strong>Durée</strong>
+                                    <p>4 heures (une matinée)</p>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">📍</span>
+                                <div class="detail-content">
+                                    <strong>Lieu</strong>
+                                    <p>Yverdon · Fribourg · Lausanne · Genève</p>
+                                    <small>En fonction du lieu qui arrangera le mieux les participants</small>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">👥</span>
+                                <div class="detail-content">
+                                    <strong>Format</strong>
+                                    <p>Groupe de 12-15 participants maximum</p>
+                                </div>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-icon">🎓</span>
+                                <div class="detail-content">
+                                    <strong>Inclus</strong>
+                                    <p>Tous les modules, mentorat, accès plateforme, certificat</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-pricing">
+                            <div class="price-row">
+                                <span>Formation complète</span>
+                                <span class="price">300 CHF</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Total à payer</span>
+                                <span class="price-total">300 CHF</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="trust-badges">
+                        <div class="trust-item">
+                            <span class="trust-icon">🔒</span>
+                            <div>
+                                <strong>Paiement sécurisé</strong>
+                                <p>Cryptage SSL 256-bit</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">✓</span>
+                            <div>
+                                <strong>Powered by Stripe</strong>
+                                <p>Plateforme de paiement mondiale</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <div class="payment-form-container">
+                    <div class="payment-card">
+                        <h2>Informations de paiement</h2>
+                        <p class="payment-description">Paiement sécurisé via Stripe. Vos informations bancaires ne sont
+                            jamais stockées sur nos serveurs.</p>
+
+                        <form id="payment-form">
+                            <div class="form-group">
+                                <label for="email">Email de confirmation</label>
+                                <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                                <small>Vous recevrez votre confirmation d'inscription à cette adresse</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Nom complet</label>
+                                <input type="text" id="name" name="name" required placeholder="Jean Dupont">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+41 XX XXX XX XX">
+                            </div>
+
+                            <div class="form-notice">
+                                <p>En cliquant sur "Continuer vers le paiement", vous serez redirigé vers notre
+                                    plateforme de paiement sécurisée Stripe pour finaliser votre inscription.</p>
+                            </div>
+
+                            <button type="submit" id="submit-button" class="btn btn-primary btn-large btn-full">
+                                <span id="button-text">Continuer vers le paiement →</span>
+                                <span id="spinner" class="spinner hidden"></span>
+                            </button>
+                        </form>
+
+                        <div class="payment-security">
+                            <p>🔐 Paiement 100% sécurisé. Vos informations de carte bancaire seront saisies directement
+                                sur la plateforme Stripe (certifiée PCI-DSS niveau 1).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-left">
+                    <img src="logo.png" alt="GeniusLab" class="footer-logo">
+                    <div>
+                        <div class="footer-title">GeniusLab</div>
+                        <div class="footer-sub">Innovation & Entrepreneuriat</div>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <a href="mailto:contact@geniuslab.ch" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Mentions légales</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2025 GeniusLab. Tous droits réservés.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Handle form submission
+        const form = document.getElementById('payment-form');
+        const submitButton = document.getElementById('submit-button');
+        const buttonText = document.getElementById('button-text');
+        const spinner = document.getElementById('spinner');
+
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            // Disable submit button
+            submitButton.disabled = true;
+            buttonText.textContent = 'Redirection en cours...';
+            spinner.classList.remove('hidden');
+
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+
+            try {
+                // Appeler le backend pour créer une session Stripe Checkout
+                const response = await fetch('/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, name, phone }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erreur lors de la création de la session de paiement');
+                }
+
+                const { url } = await response.json();
+
+                // Rediriger vers Stripe Checkout
+                window.location.href = url;
+
+            } catch (err) {
+                console.error('Erreur:', err);
+                alert('Une erreur est survenue lors du traitement de votre paiement. Veuillez réessayer.');
+
+                // Réactiver le bouton
+                submitButton.disabled = false;
+                buttonText.textContent = 'Continuer vers le paiement →';
+                spinner.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
