@@ -1,0 +1,14 @@
+# Redirections pour Railway
+# Railway ne supporte pas .htaccess, on utilise _redirects
+
+# Anciennes pages brainstorming → Nouvelle page d'accueil
+/entrez-en-contact-avec-un-expert  /index.html  301
+/a-propos-de-nous-pensee-creative  /index.html  301
+/lancement  /index.html  301
+/brainstorming  /index.html  301
+/business-plan  /index.html  301
+/nos-e-books  /blog.html  301
+
+# Redirection HTTP vers HTTPS
+http://geniuslab.ch/*  https://geniuslab.ch/:splat  301!
+http://www.geniuslab.ch/*  https://geniuslab.ch/:splat  301!
