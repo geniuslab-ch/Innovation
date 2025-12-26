@@ -653,7 +653,7 @@ body::before {
 .footer {
   padding: 34px 0 0;
   border-top: 1px solid rgba(168, 85, 247, .10);
-  background: rgba(5, 8, 16, .65);
+  background: #010410;
 }
 
 .footer-inner {
