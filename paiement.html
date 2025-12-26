@@ -239,46 +239,38 @@
         const buttonText = document.getElementById('button-text');
         const spinner = document.getElementById('spinner');
 
-        form.addEventListener('submit', async function (event) {
+        // Stripe Payment Link
+        const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/8x228saYr6O70C32Xw2go00';
+
+        form.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            // Disable submit button
-            submitButton.disabled = true;
-            buttonText.textContent = 'Redirection en cours...';
-            spinner.classList.remove('hidden');
-
+            // Récupérer les informations du formulaire
             const email = document.getElementById('email').value;
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
 
-            try {
-                // Appeler le backend pour créer une session Stripe Checkout
-                const response = await fetch('/create-checkout-session', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email, name, phone }),
-                });
-
-                if (!response.ok) {
-                    throw new Error('Erreur lors de la création de la session de paiement');
-                }
-
-                const { url } = await response.json();
-
-                // Rediriger vers Stripe Checkout
-                window.location.href = url;
-
-            } catch (err) {
-                console.error('Erreur:', err);
-                alert('Une erreur est survenue lors du traitement de votre paiement. Veuillez réessayer.');
-
-                // Réactiver le bouton
-                submitButton.disabled = false;
-                buttonText.textContent = 'Continuer vers le paiement →';
-                spinner.classList.add('hidden');
+            // Valider les champs
+            if (!email || !name || !phone) {
+                alert('Veuillez remplir tous les champs');
+                return;
             }
+
+            // Stocker les informations dans localStorage pour les récupérer après le paiement
+            localStorage.setItem('geniuslab_customer_email', email);
+            localStorage.setItem('geniuslab_customer_name', name);
+            localStorage.setItem('geniuslab_customer_phone', phone);
+
+            // Afficher l'état de chargement
+            submitButton.disabled = true;
+            buttonText.textContent = 'Redirection vers Stripe...';
+            spinner.classList.remove('hidden');
+
+            // Construire l'URL Stripe avec l'email pré-rempli
+            const stripeUrl = `${STRIPE_PAYMENT_LINK}?prefilled_email=${encodeURIComponent(email)}`;
+
+            // Rediriger vers Stripe Payment Link
+            window.location.href = stripeUrl;
         });
     </script>
 </body>

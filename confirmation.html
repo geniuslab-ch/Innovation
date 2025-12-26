@@ -85,7 +85,119 @@
                     </div>
                 </div>
 
-                <div class="next-steps">
+                <!-- Calendrier de sélection des dates -->
+                <div class="date-selection-section">
+                    <h2>📅 Choisissez vos 3 dates préférées</h2>
+                    <p style="color: rgba(249, 250, 251, 0.85); margin-bottom: 20px;">
+                        Sélectionnez 3 créneaux qui vous conviennent le mieux. Nous vous confirmerons la date définitive
+                        par email.
+                    </p>
+
+                    <div class="date-picker-container">
+                        <!-- Dates disponibles -->
+                        <div class="available-dates">
+                            <div class="date-option" data-date="2025-02-15" data-time="09:00-13:00"
+                                data-location="Yverdon">
+                                <div class="date-checkbox">
+                                    <input type="checkbox" id="date1" name="preferred-dates"
+                                        value="2025-02-15|09:00-13:00|Yverdon">
+                                    <label for="date1"></label>
+                                </div>
+                                <div class="date-info">
+                                    <div class="date-day">Samedi 15 février 2025</div>
+                                    <div class="date-time">⏰ 09:00 - 13:00</div>
+                                    <div class="date-location">📍 Yverdon-les-Bains</div>
+                                </div>
+                            </div>
+
+                            <div class="date-option" data-date="2025-02-22" data-time="09:00-13:00"
+                                data-location="Lausanne">
+                                <div class="date-checkbox">
+                                    <input type="checkbox" id="date2" name="preferred-dates"
+                                        value="2025-02-22|09:00-13:00|Lausanne">
+                                    <label for="date2"></label>
+                                </div>
+                                <div class="date-info">
+                                    <div class="date-day">Samedi 22 février 2025</div>
+                                    <div class="date-time">⏰ 09:00 - 13:00</div>
+                                    <div class="date-location">📍 Lausanne</div>
+                                </div>
+                            </div>
+
+                            <div class="date-option" data-date="2025-03-01" data-time="09:00-13:00"
+                                data-location="Genève">
+                                <div class="date-checkbox">
+                                    <input type="checkbox" id="date3" name="preferred-dates"
+                                        value="2025-03-01|09:00-13:00|Genève">
+                                    <label for="date3"></label>
+                                </div>
+                                <div class="date-info">
+                                    <div class="date-day">Samedi 1er mars 2025</div>
+                                    <div class="date-time">⏰ 09:00 - 13:00</div>
+                                    <div class="date-location">📍 Genève</div>
+                                </div>
+                            </div>
+
+                            <div class="date-option" data-date="2025-03-08" data-time="09:00-13:00"
+                                data-location="Fribourg">
+                                <div class="date-checkbox">
+                                    <input type="checkbox" id="date4" name="preferred-dates"
+                                        value="2025-03-08|09:00-13:00|Fribourg">
+                                    <label for="date4"></label>
+                                </div>
+                                <div class="date-info">
+                                    <div class="date-day">Samedi 8 mars 2025</div>
+                                    <div class="date-time">⏰ 09:00 - 13:00</div>
+                                    <div class="date-location">📍 Fribourg</div>
+                                </div>
+                            </div>
+
+                            <div class="date-option" data-date="2025-03-15" data-time="09:00-13:00"
+                                data-location="Yverdon">
+                                <div class="date-checkbox">
+                                    <input type="checkbox" id="date5" name="preferred-dates"
+                                        value="2025-03-15|09:00-13:00|Yverdon">
+                                    <label for="date5"></label>
+                                </div>
+                                <div class="date-info">
+                                    <div class="date-day">Samedi 15 mars 2025</div>
+                                    <div class="date-time">⏰ 09:00 - 13:00</div>
+                                    <div class="date-location">📍 Yverdon-les-Bains</div>
+                                </div>
+                            </div>
+
+                            <div class="date-option" data-date="2025-03-22" data-time="09:00-13:00"
+                                data-location="Lausanne">
+                                <div class="date-checkbox">
+                                    <input type="checkbox" id="date6" name="preferred-dates"
+                                        value="2025-03-22|09:00-13:00|Lausanne">
+                                    <label for="date6"></label>
+                                </div>
+                                <div class="date-info">
+                                    <div class="date-day">Samedi 22 mars 2025</div>
+                                    <div class="date-time">⏰ 09:00 - 13:00</div>
+                                    <div class="date-location">📍 Lausanne</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Message d'aide -->
+                        <div class="selection-help">
+                            <span id="selection-count">0</span>/3 dates sélectionnées
+                        </div>
+
+                        <!-- Bouton de confirmation -->
+                        <button id="confirm-dates-btn" class="btn btn-primary btn-large" disabled>
+                            Confirmer mes dates préférées
+                        </button>
+
+                        <p class="fineprint center" style="margin-top: 15px;">
+                            Nous vous confirmerons la date définitive par email dans les 48h.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="next-steps" style="margin-top: 40px;">
                     <h2>Prochaines étapes</h2>
                     <div class="steps-grid">
                         <div class="step-card">
@@ -96,13 +208,13 @@
                         </div>
                         <div class="step-card">
                             <div class="step-number">2</div>
-                            <h3>Choix des dates</h3>
-                            <p>Vous recevrez un lien Doodle pour sélectionner vos dates préférées de formation.</p>
+                            <h3>Confirmation de la date</h3>
+                            <p>Nous vous confirmerons la date définitive parmi vos choix dans les 48h.</p>
                         </div>
                         <div class="step-card">
                             <div class="step-number">3</div>
-                            <h3>Confirmation finale</h3>
-                            <p>Nous vous confirmerons la date définitive et le lieu de la formation par email.</p>
+                            <h3>Préparation</h3>
+                            <p>Vous recevrez toutes les informations pour bien préparer votre formation.</p>
                         </div>
                     </div>
                 </div>
@@ -147,6 +259,123 @@
             </div>
         </div>
     </footer>
+
+    <!-- Google Ads Conversion Tracking -->
+    <!-- Event snippet for Soumission formulaire candidature conversion page -->
+    <script>
+        // Envoyer l'événement de conversion Google Ads
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10825850251/usRCCP7euNcbEIu7laoo',
+            'value': 300.0,
+            'currency': 'CHF',
+            'transaction_id': '' // Optionnel : ajouter un ID unique pour éviter les doublons
+        });
+
+        // Log pour vérifier que la conversion est envoyée (à retirer en production)
+        console.log('✅ Conversion Google Ads envoyée - Soumission formulaire candidature');
+    </script>
+
+    <!-- Date Selection Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkboxes = document.querySelectorAll('input[name="preferred-dates"]');
+            const confirmBtn = document.getElementById('confirm-dates-btn');
+            const selectionCount = document.getElementById('selection-count');
+            const dateOptions = document.querySelectorAll('.date-option');
+            const MAX_SELECTIONS = 3;
+
+            // Gérer la sélection des dates
+            checkboxes.forEach((checkbox, index) => {
+                checkbox.addEventListener('change', function () {
+                    const checkedCount = document.querySelectorAll('input[name="preferred-dates"]:checked').length;
+
+                    // Mettre à jour le compteur
+                    selectionCount.textContent = checkedCount;
+
+                    // Activer/désactiver le bouton
+                    confirmBtn.disabled = checkedCount !== MAX_SELECTIONS;
+
+                    // Ajouter/retirer la classe selected sur le parent
+                    const parentOption = checkbox.closest('.date-option');
+                    if (checkbox.checked) {
+                        parentOption.classList.add('selected');
+                    } else {
+                        parentOption.classList.remove('selected');
+                    }
+
+                    // Désactiver les autres options si 3 sont sélectionnées
+                    if (checkedCount >= MAX_SELECTIONS) {
+                        checkboxes.forEach(cb => {
+                            if (!cb.checked) {
+                                cb.closest('.date-option').classList.add('disabled');
+                            }
+                        });
+                    } else {
+                        dateOptions.forEach(option => {
+                            option.classList.remove('disabled');
+                        });
+                    }
+                });
+            });
+
+            // Gérer le clic sur toute la carte de date
+            dateOptions.forEach(option => {
+                option.addEventListener('click', function (e) {
+                    // Ne pas déclencher si on clique directement sur le checkbox
+                    if (e.target.type !== 'checkbox' && !this.classList.contains('disabled')) {
+                        const checkbox = this.querySelector('input[type="checkbox"]');
+                        checkbox.checked = !checkbox.checked;
+                        checkbox.dispatchEvent(new Event('change'));
+                    }
+                });
+            });
+
+            // Gérer la confirmation des dates
+            confirmBtn.addEventListener('click', function () {
+                const selectedDates = [];
+                const checkedBoxes = document.querySelectorAll('input[name="preferred-dates"]:checked');
+
+                checkedBoxes.forEach(checkbox => {
+                    const option = checkbox.closest('.date-option');
+                    const date = option.dataset.date;
+                    const time = option.dataset.time;
+                    const location = option.dataset.location;
+                    const dayText = option.querySelector('.date-day').textContent;
+
+                    selectedDates.push({
+                        date: date,
+                        time: time,
+                        location: location,
+                        display: `${dayText} - ${time} - ${location}`
+                    });
+                });
+
+                // Créer le message email
+                const emailSubject = 'Mes dates préférées - Formation GeniusLab';
+                const emailBody = `Bonjour,
+
+Voici mes 3 dates préférées pour la formation GeniusLab :
+
+1. ${selectedDates[0].display}
+2. ${selectedDates[1].display}
+3. ${selectedDates[2].display}
+
+Merci de me confirmer la date définitive.
+
+Cordialement`;
+
+                // Envoyer par email (vous pouvez aussi envoyer à un webhook)
+                window.location.href = `mailto:contact@geniuslab.ch?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+                // Afficher un message de confirmation
+                alert('✅ Merci ! Vos dates préférées ont été enregistrées. Nous vous confirmerons la date définitive par email dans les 48h.');
+
+                // Désactiver le bouton après confirmation
+                confirmBtn.disabled = true;
+                confirmBtn.textContent = '✓ Dates confirmées';
+            });
+        });
+    </script>
 </body>
 
 </html>
