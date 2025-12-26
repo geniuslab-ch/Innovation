@@ -1,0 +1,21 @@
+# Redirections 301 pour ancien site brainstorming vers nouveau site formation
+# Ceci indique à Google que les pages ont définitivement changé
+
+# Redirection des anciennes pages vers la nouvelle page d'accueil
+Redirect 301 /entrez-en-contact-avec-un-expert https://geniuslab.ch/index.html
+Redirect 301 /a-propos-de-nous-pensee-creative https://geniuslab.ch/index.html
+Redirect 301 /lancement https://geniuslab.ch/index.html
+Redirect 301 /brainstorming https://geniuslab.ch/index.html
+Redirect 301 /business-plan https://geniuslab.ch/index.html
+Redirect 301 /nos-e-books https://geniuslab.ch/blog.html
+
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Empêcher l'accès aux fichiers sensibles
+<FilesMatch "\.(env|gitignore|md)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

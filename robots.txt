@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /server.js
-Disallow: /.env
-Disallow: /node_modules/
+Disallow: /blog-drafts/
+Disallow: /scripts/
+Disallow: /30 articles de blogs numéroté/
+Disallow: /*.md$
 
-# Sitemap
 Sitemap: https://geniuslab.ch/sitemap.xml
