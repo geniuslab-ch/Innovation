@@ -81,7 +81,7 @@ body::before {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(12px);
-  background: rgba(10, 14, 26, .55);
+  background: #010410;
   border-bottom: 1px solid rgba(168, 85, 247, .14);
 }
 
