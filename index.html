@@ -678,15 +678,17 @@
       // Réinitialiser le formulaire
       document.getElementById('leadEmail').value = '';
 
-      // TODO: Envoyer à Zapier pour segmentation (COLD LEAD - Ebook)
-      // fetch('https://hooks.zapier.com/hooks/catch/YOUR_WEBHOOK_URL', {
-      //   method: 'POST',
-      //   body: JSON.stringify({
-      //     email: email,
-      //     lead_type: 'cold_lead_ebook',
-      //     source: 'lead_magnet_section'
-      //   })
-      // });
+      // Envoyer à Zapier pour segmentation (COLD LEAD - Ebook)
+      fetch('https://hooks.zapier.com/hooks/catch/25826457/uajeacc/', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: email,
+          lead_type: 'cold_lead_ebook',
+          source: 'lead_magnet_section',
+          guide_name: 'Entrepreneur Sans Budget Tech',
+          timestamp: new Date().toISOString()
+        })
+      });
     }
   </script>
 
