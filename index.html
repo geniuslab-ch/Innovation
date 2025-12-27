@@ -1162,8 +1162,25 @@
         return;
       }
 
-      // TODO: Envoyer l'email à votre système (Brevo, Zapier)
-      // Créer un code promo unique et l'envoyer par email
+      // Tracker l'événement dans GA4
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'exit_popup_conversion', {
+          'email': email,
+          'promo_code': 'GENIUS10'
+        });
+      }
+
+      // Envoyer à Zapier pour segmentation (WARM LEAD - Pop-up)
+      fetch('https://hooks.zapier.com/hooks/catch/25826457/uajco2p/', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: email,
+          lead_type: 'warm_lead_popup',
+          source: 'exit_popup',
+          promo_code: 'GENIUS10',
+          timestamp: new Date().toISOString()
+        })
+      });
 
       alert(`✅ Parfait ${email} !\n\nVotre code promo GENIUS10 (-10%) a été envoyé à votre email.\n\nUtilisez-le lors de votre inscription !`);
 
