@@ -250,6 +250,83 @@
     }
   </style>
 
+  <!-- Section Statistiques -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">24</div>
+          <div class="stat-label">Entrepreneurs accompagnés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">De satisfaction</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">20</div>
+          <div class="stat-label">Startups lancées</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .stats-section {
+      padding: 60px 0;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(34, 211, 238, 0.03));
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(17, 24, 39, 0.5);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(168, 85, 247, 0.4);
+      box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #a855f7, #d946ef, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: rgba(249, 250, 251, 0.8);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+
   <!-- Social proof -->
   <section class="strip">
     <div class="strip-inner">
@@ -335,11 +412,32 @@
             </div>
           </div>
 
+          <p class="acceptance-rate">
+            ✅ <strong>90% des candidats motivés sont acceptés</strong> - Pas besoin d'avoir une idée parfaite, juste
+            l'envie d'entreprendre !
+          </p>
+
           <a class="btn btn-primary" href="#formulaire">Candidatez maintenant</a>
         </div>
       </div>
     </div>
   </section>
+
+  <style>
+    .acceptance-rate {
+      margin-top: 25px;
+      padding: 20px;
+      background: rgba(34, 211, 238, 0.1);
+      border-left: 4px solid #22d3ee;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      color: rgba(249, 250, 251, 0.95);
+    }
+
+    .acceptance-rate strong {
+      color: #22d3ee;
+    }
+  </style>
 
   <!-- Section 4 : Les Témoignages (Preuve sociale) -->
   <section class="section">
@@ -821,6 +919,106 @@
       </div>
     </div>
   </section>
+
+  <!-- Section Qui suis-je ? -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="founder-section">
+        <div class="founder-image">
+          <img src="noura-photo.jpg" alt="Noura Schärer - Fondatrice GeniusLab" loading="lazy" />
+        </div>
+        <div class="founder-content">
+          <h2>Qui suis-je ?</h2>
+          <h3>Noura Schärer, Fondatrice de GeniusLab</h3>
+
+          <p><strong>Diplômée de la HEIG-VD</strong>, j'ai eu la chance de circuler horizontalement au sein de
+            différentes entreprises, occupant diverses casquettes dans plusieurs départements. Cette expérience m'a
+            donné une <strong>vision globale et transversale</strong> du fonctionnement d'une entreprise.</p>
+
+          <p>Cette perspective unique me permet aujourd'hui de concevoir des sites web et des solutions avec un
+            <strong>message clair et cohérent</strong>, en comprenant les besoins de chaque département.
+          </p>
+
+          <h4>Pourquoi GeniusLab ?</h4>
+
+          <p>En tant que <strong>multipreneuse</strong>, j'ai constaté que trop d'entrepreneurs allouent encore des
+            sommes folles au développement technique de leur solution. Pourtant, avec l'IA et le no-code, il est
+            désormais possible de créer un <strong>MVP (Minimum Viable Product)</strong> rapidement et à moindre coût.
+          </p>
+
+          <p>J'ai créé GeniusLab pour <strong>démocratiser l'entrepreneuriat</strong> et permettre à chacun de lancer sa
+            startup sans dépenser 10'000+ CHF en développement.</p>
+
+          <div class="founder-cta">
+            <a href="#formulaire" class="btn btn-primary">Travaillons ensemble</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .founder-section {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .founder-image img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+    }
+
+    .founder-content h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .founder-content h3 {
+      font-size: 1.5rem;
+      background: linear-gradient(90deg, #a855f7, #d946ef, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 25px;
+    }
+
+    .founder-content h4 {
+      font-size: 1.3rem;
+      margin: 30px 0 15px;
+      background: linear-gradient(90deg, #a855f7, #d946ef, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .founder-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: rgba(249, 250, 251, 0.9);
+    }
+
+    .founder-cta {
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .founder-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .founder-image img {
+        max-width: 250px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  </style>
 
   <!-- Section 7 : Informations Pratiques -->
   <section class="section section-alt">
