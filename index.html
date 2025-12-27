@@ -442,10 +442,10 @@
   </style>
 
   <!-- Section 4 : Les Témoignages (Preuve sociale) -->
-  <section class="section">
+  <section class="section" role="region" aria-labelledby="testimonials-heading">
     <div class="container">
       <div class="section-head">
-        <h2>Ce que nos étudiants disent</h2>
+        <h2 id="testimonials-heading">Ce que nos étudiants disent</h2>
         <p>Découvrez les histoires inspirantes de ceux qui ont lancé leur startup grâce à GeniusLab.</p>
       </div>
 
@@ -511,10 +511,11 @@
         </div>
 
         <!-- Navigation slider -->
-        <div class="testimonials-nav">
-          <button class="testimonials-btn prev" onclick="moveTestimonials(-1)">‹</button>
-          <div class="testimonials-dots"></div>
-          <button class="testimonials-btn next" onclick="moveTestimonials(1)">›</button>
+        <div class="testimonials-nav" role="navigation" aria-label="Navigation des témoignages">
+          <button class="testimonials-btn prev" onclick="moveTestimonials(-1)"
+            aria-label="Témoignage précédent">‹</button>
+          <div class="testimonials-dots" role="tablist" aria-label="Sélection de page de témoignages"></div>
+          <button class="testimonials-btn next" onclick="moveTestimonials(1)" aria-label="Témoignage suivant">›</button>
         </div>
       </div>
     </div>
