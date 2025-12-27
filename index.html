@@ -370,6 +370,17 @@
       flex-shrink: 0;
       padding: 0 20px;
       box-sizing: border-box;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .testimonials-track .quote blockquote {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+      line-height: 1.7;
     }
 
     .slider-nav {
@@ -655,6 +666,10 @@
         });
       }
 
+      // Marquer que l'utilisateur a téléchargé l'ebook (évite le pop-up de sortie)
+      localStorage.setItem('ebookDownloaded', 'true');
+      localStorage.setItem('exitPopupShown', 'true'); // Désactiver le pop-up de sortie
+
       // Message de confirmation
       alert(`✅ Téléchargement en cours !\n\nMerci ${email}, votre guide "Entrepreneur Sans Budget Tech" est en cours de téléchargement.\n\n🎁 BONUS : Vous recevez également 10% de réduction sur la formation avec le code GENIUS10 !`);
 
@@ -662,6 +677,16 @@
 
       // Réinitialiser le formulaire
       document.getElementById('leadEmail').value = '';
+
+      // TODO: Envoyer à Zapier pour segmentation (COLD LEAD - Ebook)
+      // fetch('https://hooks.zapier.com/hooks/catch/YOUR_WEBHOOK_URL', {
+      //   method: 'POST',
+      //   body: JSON.stringify({
+      //     email: email,
+      //     lead_type: 'cold_lead_ebook',
+      //     source: 'lead_magnet_section'
+      //   })
+      // });
     }
   </script>
 
