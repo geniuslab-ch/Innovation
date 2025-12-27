@@ -223,10 +223,31 @@
                     <h3>Des questions ?</h3>
                     <p>N'hésitez pas à nous contacter si vous avez besoin d'informations complémentaires.</p>
                     <div class="contact-buttons">
-                        <a href="mailto:contact@geniuslab.ch" class="btn btn-primary">Nous contacter</a>
+                        <button onclick="copyEmailConfirmation()" class="btn btn-primary"
+                            id="contactBtnConfirmation">Nous contacter</button>
                         <a href="index.html" class="btn btn-secondary">Retour à l'accueil</a>
                     </div>
                 </div>
+
+                <script>
+                    function copyEmailConfirmation() {
+                        const email = 'contact@geniuslab.ch';
+                        const btn = document.getElementById('contactBtnConfirmation');
+
+                        navigator.clipboard.writeText(email).then(() => {
+                            const originalText = btn.innerHTML;
+                            btn.innerHTML = '✅ Email copié : contact@geniuslab.ch';
+                            btn.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+
+                            setTimeout(() => {
+                                btn.innerHTML = originalText;
+                                btn.style.background = '';
+                            }, 3000);
+                        }).catch(err => {
+                            alert('Email : contact@geniuslab.ch');
+                        });
+                    }
+                </script>
             </div>
         </div>
     </section>
