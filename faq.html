@@ -301,10 +301,34 @@
                 <h3>Vous avez d'autres questions ?</h3>
                 <p>N'hésitez pas à nous contacter directement !</p>
                 <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-                    <a href="mailto:contact@geniuslab.ch" class="btn btn-primary">Nous contacter</a>
+                    <button onclick="copyEmail()" class="btn btn-primary" id="contactBtn">Nous contacter</button>
                     <a href="index.html#formulaire" class="btn btn-secondary">Postuler maintenant</a>
                 </div>
             </div>
+
+            <script>
+                function copyEmail() {
+                    const email = 'contact@geniuslab.ch';
+                    const btn = document.getElementById('contactBtn');
+
+                    // Copier dans le presse-papiers
+                    navigator.clipboard.writeText(email).then(() => {
+                        // Changer le texte du bouton
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '✅ Email copié !';
+                        btn.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+
+                        // Revenir au texte original après 2 secondes
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.style.background = '';
+                        }, 2000);
+                    }).catch(err => {
+                        // Fallback si la copie échoue
+                        alert('Email : contact@geniuslab.ch');
+                    });
+                }
+            </script>
 
         </div>
     </section>
