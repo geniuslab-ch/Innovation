@@ -417,7 +417,9 @@
             l'envie d'entreprendre !
           </p>
 
-          <a class="btn btn-primary" href="#formulaire">Candidatez maintenant</a>
+          <div style="text-align: center;">
+            <a class="btn btn-primary" href="#formulaire">Candidatez maintenant</a>
+          </div>
         </div>
       </div>
     </div>
@@ -526,7 +528,7 @@
 
     .testimonials-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       max-width: 1200px;
       margin: 0 auto;
@@ -610,7 +612,7 @@
 
   <script>
     let currentTestimonial = 0;
-    const totalTestimonials = 2; // 8 témoignages / 4 par vue = 2 pages
+    const totalTestimonials = 3; // 8 témoignages / 3 par vue = 3 pages (arrondi)
     let autoTestimonialInterval;
 
     // Créer les dots
