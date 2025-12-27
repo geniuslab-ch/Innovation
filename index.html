@@ -639,14 +639,26 @@
         return;
       }
 
-      // Envoyer l'email à votre système (Brevo, Zapier, etc.)
-      // Pour l'instant, on simule le téléchargement
+      // Télécharger le PDF immédiatement
+      const link = document.createElement('a');
+      link.href = 'guide-no-code-geniuslab.pdf';
+      link.download = 'guide-no-code-geniuslab.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
-      // TODO: Remplacer par votre lien de téléchargement réel
-      alert(`✅ Merci ${email} ! Le guide sera envoyé à votre email dans quelques instants.\n\nEn attendant, vous recevez 10% de réduction sur la formation !`);
+      // Tracker l'événement dans GA4
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'lead_magnet_download', {
+          'email': email,
+          'guide_name': 'Entrepreneur Sans Budget Tech'
+        });
+      }
 
-      // Optionnel : Ouvrir le pop-up de réduction
-      // showDiscountPopup();
+      // Message de confirmation
+      alert(`✅ Téléchargement en cours !\n\nMerci ${email}, votre guide "Entrepreneur Sans Budget Tech" est en cours de téléchargement.\n\n🎁 BONUS : Vous recevez également 10% de réduction sur la formation avec le code GENIUS10 !`);
+
+
 
       // Réinitialiser le formulaire
       document.getElementById('leadEmail').value = '';
