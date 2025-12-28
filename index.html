@@ -1961,9 +1961,9 @@
     // Pop-up d'intention de sortie
     let exitPopupShown = false;
 
-    function showExitPopup() {
-      // Vérifier si le pop-up a déjà été montré (cookie)
-      if (localStorage.getItem('exitPopupShown') || exitPopupShown) {
+    function showExitPopup(force = false) {
+      // Vérifier si le pop-up a déjà été montré (cookie), sauf si force=true
+      if (!force && (localStorage.getItem('exitPopupShown') || exitPopupShown)) {
         return;
       }
 
@@ -2014,10 +2014,10 @@
       }, 2000);
     }
 
-    // Fonction pour ouvrir le popup depuis la bannière
+    // Fonction pour ouvrir le popup depuis la bannière (force=true pour toujours afficher)
     function openDiscountPopup() {
-      showExitPopup();
-      closeTopBanner();
+      showExitPopup(true);  // Force l'affichage même si déjà montré
+      // Ne pas fermer la bannière pour qu'elle reste visible
     }
 
     // Fonction pour fermer la bannière du haut
