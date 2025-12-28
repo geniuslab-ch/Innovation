@@ -1462,8 +1462,14 @@
       /* Masquer le chat Tawk.to sur mobile pour éviter l'obstruction */
       #tawk-bubble-container,
       .tawk-min-container,
-      iframe[title*="chat"] {
+      .tawk-button,
+      div[id^="tawk"],
+      iframe[title*="chat"],
+      iframe[title*="tawk"] {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
       }
 
       /* Header plus espacé */
