@@ -2029,10 +2029,10 @@
       }
     }
 
-    // Afficher la bannière après le chargement si pas déjà fermée
+    // Afficher la bannière après le chargement si pas déjà fermée par l'utilisateur
     window.addEventListener('load', () => {
       const banner = document.getElementById('topDiscountBanner');
-      if (banner && (localStorage.getItem('topBannerClosed') || localStorage.getItem('exitPopupShown'))) {
+      if (banner && localStorage.getItem('topBannerClosed')) {
         banner.classList.add('hidden');
       }
     });
