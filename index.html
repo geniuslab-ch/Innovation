@@ -610,8 +610,25 @@
 
   <script>
     let currentTestimonial = 0;
-    const totalTestimonials = 3; // 8 témoignages / 3 par vue = 3 pages (arrondi)
+    const totalCards = 8;
+    let cardsPerView = 3; // Par défaut desktop
     let autoTestimonialInterval;
+
+    // Détecter le nombre de cartes visibles selon la taille d'écran
+    function updateCardsPerView() {
+      if (window.innerWidth <= 768) {
+        cardsPerView = 1; // Mobile
+      } else if (window.innerWidth <= 1024) {
+        cardsPerView = 2; // Tablette
+      } else {
+        cardsPerView = 3; // Desktop
+      }
+    }
+
+    updateCardsPerView();
+    window.addEventListener('resize', updateCardsPerView);
+
+    const totalTestimonials = Math.ceil(totalCards / cardsPerView);
 
     // Créer les dots
     const testimonialsDotsContainer = document.querySelector('.testimonials-dots');
@@ -624,8 +641,8 @@
 
     function moveTestimonials(direction) {
       currentTestimonial += direction;
-      if (currentTestimonial < 0) currentTestimonial = totalTestimonials - 1;
-      if (currentTestimonial >= totalTestimonials) currentTestimonial = 0;
+      if (currentTestimonial < 0) currentTestimonial = Math.ceil(totalCards / cardsPerView) - 1;
+      if (currentTestimonial >= Math.ceil(totalCards / cardsPerView)) currentTestimonial = 0;
       updateTestimonials();
       resetAutoTestimonial();
     }
@@ -638,7 +655,8 @@
 
     function updateTestimonials() {
       const grid = document.querySelector('.testimonials-grid');
-      const translateX = currentTestimonial * -100;
+      const cardWidth = 100 / cardsPerView; // Largeur d'une carte en %
+      const translateX = currentTestimonial * -cardWidth * cardsPerView;
       grid.style.transform = `translateX(${translateX}%)`;
 
       // Update dots
