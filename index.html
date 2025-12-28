@@ -155,14 +155,31 @@
   <!-- Hero Section -->
   <header id="top" class="hero">
     <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span>⏱️ Formation intensive 4h · Présentiel ou à distance · 12 places par session</span>
-        </div>
-        <h1>Transformez votre idée en startup viable en 4 heures</h1>
-        <p class="hero-subtitle">Apprenez à créer votre startup avec l'IA, sans coder. Formation pratique en petits
-          groupes avec mentorat personnalisé.</p>
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>⏱️ Formation intensive 4h · 9h-13h ou 18h-22h · 12 places par session</span>
+      </div>
+
+      <h1>
+        Créez votre Startup <span class="text-grad">Sans Coder</span>,<br />
+        Grâce à l'IA
+      </h1>
+
+      <p class="hero-sub">
+        Lancez votre entreprise dès maintenant avec des outils simples et puissants – sans aucune ligne de code !
+      </p>
+
+      <div class="hero-cta">
         <a class="btn btn-primary" href="#formulaire">Candidatez maintenant</a>
+        <a class="btn btn-secondary" href="#pourquoi">En savoir plus</a>
+      </div>
+
+      <p class="hero-tagline">
+        Sélectionnez votre place pour le programme GeniusLab et commencez à bâtir votre entreprise en un clic.
+      </p>
+
+      <!-- Badges de confiance -->
+      <div class="trust-badges">
         <div class="trust-badge">
           <span class="badge-icon">🔒</span>
           <span class="badge-text">Paiement sécurisé Stripe</span>
@@ -172,8 +189,12 @@
           <span class="badge-text">Garantie satisfait ou remboursé</span>
         </div>
         <div class="trust-badge">
-          <span class="badge-icon">🌍</span>
-          <span class="badge-text">Présentiel (Suisse) ou Google Meet</span>
+          <span class="badge-icon">📍</span>
+          <span class="badge-text">En présentiel (Suisse)</span>
+        </div>
+        <div class="trust-badge">
+          <span class="badge-icon">💻</span>
+          <span class="badge-text">À distance (Google Meet)</span>
         </div>
       </div>
     </div>
@@ -251,183 +272,17 @@
         </div>
       </div>
     </div>
-    <!-- Section Format Selection -->
-    <section id="format" class="format-section section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Choisissez votre format</h2>
-          <p>La même formation intensive, deux façons d'y participer</p>
-        </div>
+    font-size: 3rem;
+    }
 
-        <div class="format-grid">
-          <!-- Présentiel -->
-          <div class="format-card">
-            <div class="format-icon">📍</div>
-            <h3>Présentiel</h3>
-            <p>Formation en petit groupe dans nos locaux en Suisse romande</p>
-            <ul class="format-benefits">
-              <li>✓ Networking direct avec les participants</li>
-              <li>✓ Yverdon, Fribourg, Lausanne, Genève</li>
-              <li>✓ Samedi matin, 9h-13h</li>
-              <li>✓ Matériel et supports fournis</li>
-            </ul>
-            <div class="format-price">300 CHF</div>
-          </div>
+    .format-card h3 {
+    font-size: 1.5rem;
+    }
 
-          <!-- À distance -->
-          <div class="format-card">
-            <div class="format-icon">💻</div>
-            <h3>À distance</h3>
-            <p>Formation interactive via Google Meet, depuis n'importe où</p>
-            <ul class="format-benefits">
-              <li>✓ Accessible depuis toute la Suisse</li>
-              <li>✓ Mercredi soir, 18h-22h</li>
-              <li>✓ Sessions enregistrées disponibles</li>
-              <li>✓ Support en ligne inclus</li>
-            </ul>
-            <div class="format-price">300 CHF</div>
-          </div>
-        </div>
-
-        <p class="format-note">💡 Même contenu, même qualité, même accompagnement – choisissez simplement le format qui
-          vous convient le mieux !</p>
-      </div>
-    </section>
-
-    <style>
-      .format-section {
-        padding: 80px 0;
-        background: linear-gradient(135deg, rgba(168, 85, 247, 0.03), rgba(34, 211, 238, 0.02));
-      }
-
-      .format-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-        max-width: 1000px;
-        margin: 0 auto 30px;
-      }
-
-      .format-card {
-        background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.6));
-        border: 1px solid rgba(168, 85, 247, 0.2);
-        border-radius: 20px;
-        padding: 40px;
-        text-align: center;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .format-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(34, 211, 238, 0.03));
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .format-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(168, 85, 247, 0.4);
-        box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
-      }
-
-      .format-card:hover::before {
-        opacity: 1;
-      }
-
-      .format-icon {
-        font-size: 4rem;
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .format-card h3 {
-        font-size: 2rem;
-        font-weight: 800;
-        background: linear-gradient(90deg, #a855f7, #d946ef, #22d3ee);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 15px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .format-card>p {
-        color: rgba(249, 250, 251, 0.8);
-        margin-bottom: 25px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .format-benefits {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 30px 0;
-        text-align: left;
-        position: relative;
-        z-index: 1;
-      }
-
-      .format-benefits li {
-        color: rgba(249, 250, 251, 0.9);
-        padding: 10px 0;
-        font-size: 0.95rem;
-        border-bottom: 1px solid rgba(168, 85, 247, 0.1);
-      }
-
-      .format-benefits li:last-child {
-        border-bottom: none;
-      }
-
-      .format-price {
-        font-size: 2.5rem;
-        font-weight: 900;
-        background: linear-gradient(90deg, #a855f7, #d946ef, #22d3ee);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        position: relative;
-        z-index: 1;
-      }
-
-      .format-note {
-        text-align: center;
-        color: rgba(249, 250, 251, 0.7);
-        font-size: 1.1rem;
-        max-width: 700px;
-        margin: 0 auto;
-      }
-
-      @media (max-width: 768px) {
-        .format-grid {
-          grid-template-columns: 1fr;
-          gap: 30px;
-        }
-
-        .format-card {
-          padding: 30px 20px;
-        }
-
-        .format-icon {
-          font-size: 3rem;
-        }
-
-        .format-card h3 {
-          font-size: 1.5rem;
-        }
-
-        .format-price {
-          font-size: 2rem;
-        }
-      }
+    .format-price {
+    font-size: 2rem;
+    }
+    }
     </style>
   </section>
 
@@ -1294,9 +1149,8 @@
     <div class="container">
       <div class="section-head">
         <h2>Choisissez vos dates de formation</h2>
-        <p><strong>Présentiel</strong> : Samedi matin, 9h-13h (Yverdon, Fribourg, Lausanne, Genève)<br>
-          <strong>À distance</strong> : Mercredi soir, 18h-22h (Google Meet)
-        </p>
+        <p>Les formations ont lieu le <strong>samedi matin (9h-13h)</strong> en présentiel ou le <strong>mercredi soir
+            (18h-22h)</strong> à distance.</p>
         <p>Sélectionnez vos dates préférées et nous vous contacterons pour confirmer votre session.</p>
       </div>
 
@@ -1541,7 +1395,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Prêt à commencer ?</h2>
-        <p>Sessions le <strong>samedi matin, de 9h à 13h</strong> · Toutes les informations pratiques</p>
+        <p>Sessions le <strong>samedi (9h-13h) ou mercredi (18h-22h)</strong> · Toutes les informations pratiques</p>
       </div>
 
       <div class="practical-info">
