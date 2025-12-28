@@ -533,11 +533,79 @@
       display: flex;
       gap: 20px;
       transition: transform 0.5s ease;
+      width: 100%;
     }
 
     .testimonial-card {
-      min-width: calc((100% - 40px) / 3);
-      flex-shrink: 0;
+      flex: 0 0 calc(33.333% - 14px);
+      /* 3 cartes par écran desktop */
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(34, 211, 238, 0.06));
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-card blockquote {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(249, 250, 251, 0.9);
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+      flex-grow: 1;
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .testimonial-card figcaption {
+      margin-top: 15px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--g3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-card figcaption span {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(249, 250, 251, 0.6);
+      margin-top: 3px;
+    }
+
+    @media (max-width: 1024px) {
+      .testimonial-card {
+        flex: 0 0 calc(50% - 10px);
+        /* 2 cartes par écran tablette */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-card {
+        flex: 0 0 100%;
+        /* 1 carte par écran mobile */
+      }
+
+      .testimonials-grid {
+        gap: 0;
+      }
+
+      .testimonials-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+      }
     }
 
     .testimonials-nav {
@@ -587,24 +655,6 @@
       background: linear-gradient(90deg, #a855f7, #d946ef, #22d3ee);
       width: 30px;
       border-radius: 5px;
-    }
-
-    @media (max-width: 1024px) {
-      .testimonial-card {
-        min-width: calc((100% - 20px) / 2);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .testimonial-card {
-        min-width: 100%;
-      }
-
-      .testimonials-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 20px;
-      }
     }
   </style>
 
