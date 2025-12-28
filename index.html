@@ -676,7 +676,7 @@
       border: 1px solid rgba(168, 85, 247, 0.2);
       border-radius: 20px;
       padding: 30px;
-      aspect-ratio: 1;
+      min-height: 280px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -711,14 +711,15 @@
     .testimonial-card blockquote {
       margin: 0;
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: rgba(249, 250, 251, 0.9);
       font-style: italic;
       position: relative;
       z-index: 1;
       flex-grow: 1;
-      display: flex;
-      align-items: center;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
     }
 
     .testimonial-card figcaption {
