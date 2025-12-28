@@ -1030,12 +1030,38 @@
   </style>
 
   <script>
-    source: 'lead_magnet_section',
-      guide_name: 'Entrepreneur Sans Budget Tech',
-        timestamp: new Date().toISOString()
-        })
+    // Configuration Tally Popup Ebook
+    function openEbookPopup() {
+      Tally.openPopup('rjB4Wl', {
+        layout: 'modal',
+        width: 600,
+        emoji: {
+          text: '📚',
+          animation: 'bounce'
+        },
+        autoClose: 3000,
+        doNotShowAfterSubmit: true,
+        onSubmit: (payload) => {
+          // Marquer que l'utilisateur a téléchargé l'ebook
+          localStorage.setItem('ebookDownloaded', 'true');
+          localStorage.setItem('exitPopupShown', 'true');
+
+          // Tracker dans GA4
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'lead_magnet_download', {
+              'guide_name': 'Entrepreneur Sans Budget Tech'
+            });
+          }
+        }
       });
     }
+
+    // Auto-trigger popup après 30 secondes (si pas déjà téléchargé)
+    setTimeout(() => {
+      if (!localStorage.getItem('ebookDownloaded')) {
+        openEbookPopup();
+      }
+    }, 30000);
   </script>
 
   <!-- Section 5 : Le Programme de Formation (Détails) -->
