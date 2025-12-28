@@ -610,6 +610,15 @@
         word-break: break-word;
         white-space: normal !important;
         overflow-wrap: anywhere;
+        font-size: 13px;
+        line-height: 1.6;
+        max-height: 5.2em;
+        /* ~4 lignes (1.3em x 4) */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
       }
 
       .testimonials-grid {
