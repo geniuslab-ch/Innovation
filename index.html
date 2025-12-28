@@ -710,8 +710,9 @@
 
     function updateTestimonials() {
       const grid = document.querySelector('.testimonials-grid');
-      const cardWidth = 100 / cardsPerView; // Largeur d'une carte en %
-      const translateX = currentTestimonial * -cardWidth * cardsPerView;
+      // Sur mobile (1 carte), on translate de 100% par carte
+      // Sur desktop (3 cartes), on translate de 100% par page (3 cartes)
+      const translateX = currentTestimonial * -100;
       grid.style.transform = `translateX(${translateX}%)`;
 
       // Update dots
