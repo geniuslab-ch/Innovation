@@ -666,12 +666,9 @@
   </script>
 
   <style>
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+    /* Scroll offset pour les ancres (éviter que le header cache le titre) */
+    html {
+      scroll-padding-top: 80px;
     }
 
     .testimonial-card {
@@ -1138,17 +1135,26 @@
           }
 
           @media (max-width: 768px) {
+            .process-timeline {
+              flex-direction: column;
+              align-items: stretch;
+            }
+
             .process-arrow {
-              display: none;
+              display: block;
+              transform: rotate(90deg);
+              font-size: 30px;
+              text-align: center;
+              margin: 10px 0;
             }
 
             .process-step {
-              min-width: 100px;
-              padding: 15px;
+              min-width: auto;
+              width: 100%;
             }
 
             .process-step h4 {
-              font-size: 13px;
+              font-size: 14px;
             }
           }
         </style>
@@ -1258,6 +1264,10 @@
         max-width: 250px;
         margin: 0 auto;
         display: block;
+      }
+
+      .founder-cta {
+        text-align: center;
       }
     }
   </style>
