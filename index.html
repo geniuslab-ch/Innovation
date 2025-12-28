@@ -251,64 +251,64 @@
         </div>
       </div>
     </div>
-<!-- Section Format Selection -->
-<section id="format" class="format-section section">
-    <div class="container">
+    <!-- Section Format Selection -->
+    <section id="format" class="format-section section">
+      <div class="container">
         <div class="section-head">
-            <h2>Choisissez votre format</h2>
-            <p>La même formation intensive, deux façons d'y participer</p>
+          <h2>Choisissez votre format</h2>
+          <p>La même formation intensive, deux façons d'y participer</p>
         </div>
 
         <div class="format-grid">
-            <!-- Présentiel -->
-            <div class="format-card">
-                <div class="format-icon">📍</div>
-                <h3>Présentiel</h3>
-                <p>Formation en petit groupe dans nos locaux en Suisse romande</p>
-                <ul class="format-benefits">
-                    <li>✓ Networking direct avec les participants</li>
-                    <li>✓ Yverdon, Fribourg, Lausanne, Genève</li>
-                    <li>✓ Samedi matin, 9h-13h</li>
-                    <li>✓ Matériel et supports fournis</li>
-                </ul>
-                <div class="format-price">300 CHF</div>
-            </div>
+          <!-- Présentiel -->
+          <div class="format-card">
+            <div class="format-icon">📍</div>
+            <h3>Présentiel</h3>
+            <p>Formation en petit groupe dans nos locaux en Suisse romande</p>
+            <ul class="format-benefits">
+              <li>✓ Networking direct avec les participants</li>
+              <li>✓ Yverdon, Fribourg, Lausanne, Genève</li>
+              <li>✓ Samedi matin, 9h-13h</li>
+              <li>✓ Matériel et supports fournis</li>
+            </ul>
+            <div class="format-price">300 CHF</div>
+          </div>
 
-            <!-- À distance -->
-            <div class="format-card">
-                <div class="format-icon">💻</div>
-                <h3>À distance</h3>
-                <p>Formation interactive via Google Meet, depuis n'importe où</p>
-                <ul class="format-benefits">
-                    <li>✓ Accessible depuis toute la Suisse</li>
-                    <li>✓ Mercredi soir, 18h-22h</li>
-                    <li>✓ Sessions enregistrées disponibles</li>
-                    <li>✓ Support en ligne inclus</li>
-                </ul>
-                <div class="format-price">300 CHF</div>
-            </div>
+          <!-- À distance -->
+          <div class="format-card">
+            <div class="format-icon">💻</div>
+            <h3>À distance</h3>
+            <p>Formation interactive via Google Meet, depuis n'importe où</p>
+            <ul class="format-benefits">
+              <li>✓ Accessible depuis toute la Suisse</li>
+              <li>✓ Mercredi soir, 18h-22h</li>
+              <li>✓ Sessions enregistrées disponibles</li>
+              <li>✓ Support en ligne inclus</li>
+            </ul>
+            <div class="format-price">300 CHF</div>
+          </div>
         </div>
 
         <p class="format-note">💡 Même contenu, même qualité, même accompagnement – choisissez simplement le format qui
-            vous convient le mieux !</p>
-    </div>
-</section>
+          vous convient le mieux !</p>
+      </div>
+    </section>
 
-<style>
-    .format-section {
+    <style>
+      .format-section {
         padding: 80px 0;
         background: linear-gradient(135deg, rgba(168, 85, 247, 0.03), rgba(34, 211, 238, 0.02));
-    }
+      }
 
-    .format-grid {
+      .format-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
         max-width: 1000px;
         margin: 0 auto 30px;
-    }
+      }
 
-    .format-card {
+      .format-card {
         background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.6));
         border: 1px solid rgba(168, 85, 247, 0.2);
         border-radius: 20px;
@@ -317,9 +317,9 @@
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
-    }
+      }
 
-    .format-card::before {
+      .format-card::before {
         content: '';
         position: absolute;
         top: 0;
@@ -329,26 +329,26 @@
         background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(34, 211, 238, 0.03));
         opacity: 0;
         transition: opacity 0.3s ease;
-    }
+      }
 
-    .format-card:hover {
+      .format-card:hover {
         transform: translateY(-5px);
         border-color: rgba(168, 85, 247, 0.4);
         box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
-    }
+      }
 
-    .format-card:hover::before {
+      .format-card:hover::before {
         opacity: 1;
-    }
+      }
 
-    .format-icon {
+      .format-icon {
         font-size: 4rem;
         margin-bottom: 20px;
         position: relative;
         z-index: 1;
-    }
+      }
 
-    .format-card h3 {
+      .format-card h3 {
         font-size: 2rem;
         font-weight: 800;
         background: linear-gradient(90deg, #a855f7, #d946ef, #22d3ee);
@@ -358,36 +358,36 @@
         margin-bottom: 15px;
         position: relative;
         z-index: 1;
-    }
+      }
 
-    .format-card>p {
+      .format-card>p {
         color: rgba(249, 250, 251, 0.8);
         margin-bottom: 25px;
         position: relative;
         z-index: 1;
-    }
+      }
 
-    .format-benefits {
+      .format-benefits {
         list-style: none;
         padding: 0;
         margin: 0 0 30px 0;
         text-align: left;
         position: relative;
         z-index: 1;
-    }
+      }
 
-    .format-benefits li {
+      .format-benefits li {
         color: rgba(249, 250, 251, 0.9);
         padding: 10px 0;
         font-size: 0.95rem;
         border-bottom: 1px solid rgba(168, 85, 247, 0.1);
-    }
+      }
 
-    .format-benefits li:last-child {
+      .format-benefits li:last-child {
         border-bottom: none;
-    }
+      }
 
-    .format-price {
+      .format-price {
         font-size: 2.5rem;
         font-weight: 900;
         background: linear-gradient(90deg, #a855f7, #d946ef, #22d3ee);
@@ -396,39 +396,40 @@
         background-clip: text;
         position: relative;
         z-index: 1;
-    }
+      }
 
-    .format-note {
+      .format-note {
         text-align: center;
         color: rgba(249, 250, 251, 0.7);
         font-size: 1.1rem;
         max-width: 700px;
         margin: 0 auto;
-    }
+      }
 
-    @media (max-width: 768px) {
+      @media (max-width: 768px) {
         .format-grid {
-            grid-template-columns: 1fr;
-            gap: 30px;
+          grid-template-columns: 1fr;
+          gap: 30px;
         }
 
         .format-card {
-            padding: 30px 20px;
+          padding: 30px 20px;
         }
 
         .format-icon {
-            font-size: 3rem;
+          font-size: 3rem;
         }
 
         .format-card h3 {
-            font-size: 1.5rem;
+          font-size: 1.5rem;
         }
 
         .format-price {
-            font-size: 2rem;
+          font-size: 2rem;
         }
-    }
-</style>  </section>
+      }
+    </style>
+  </section>
 
   <style>
     .stats-section {
@@ -1293,8 +1294,10 @@
     <div class="container">
       <div class="section-head">
         <h2>Choisissez vos dates de formation</h2>
-        <p>Les formations ont lieu le <strong>samedi matin</strong>. Sélectionnez vos dates préférées et nous vous
-          contacterons pour confirmer votre session.</p>
+        <p><strong>Présentiel</strong> : Samedi matin, 9h-13h (Yverdon, Fribourg, Lausanne, Genève)<br>
+          <strong>À distance</strong> : Mercredi soir, 18h-22h (Google Meet)
+        </p>
+        <p>Sélectionnez vos dates préférées et nous vous contacterons pour confirmer votre session.</p>
       </div>
 
       <div class="dates-content">
@@ -1323,8 +1326,8 @@
             <div class="process-arrow">→</div>
             <div class="process-step">
               <div class="process-number">4</div>
-              <h4>Choix dates</h4>
-              <p>3 options</p>
+              <h4>Choix dates + format</h4>
+              <p>1 min</p>
             </div>
             <div class="process-arrow">→</div>
             <div class="process-step">
