@@ -669,38 +669,41 @@
   <script>
     let currentTestimonial = 0;
     const totalCards = 8;
-    let cardsPerView = 3; // Par défaut desktop
+    let cardsPerView = 3;
+    let totalPages = 3;
     let autoTestimonialInterval;
 
     // Détecter le nombre de cartes visibles selon la taille d'écran
     function updateCardsPerView() {
       if (window.innerWidth <= 768) {
-        cardsPerView = 1; // Mobile
+        cardsPerView = 1; // Mobile: 1 carte = 8 pages
       } else if (window.innerWidth <= 1024) {
-        cardsPerView = 2; // Tablette
+        cardsPerView = 2; // Tablette: 2 cartes = 4 pages
       } else {
-        cardsPerView = 3; // Desktop
+        cardsPerView = 3; // Desktop: 3 cartes = 3 pages
       }
+      totalPages = Math.ceil(totalCards / cardsPerView);
+      createDots();
+      updateTestimonials();
     }
 
-    updateCardsPerView();
-    window.addEventListener('resize', updateCardsPerView);
+    // Créer les dots dynamiquement
+    function createDots() {
+      const testimonialsDotsContainer = document.querySelector('.testimonials-dots');
+      testimonialsDotsContainer.innerHTML = ''; // Vider les dots existants
 
-    const totalTestimonials = Math.ceil(totalCards / cardsPerView);
-
-    // Créer les dots
-    const testimonialsDotsContainer = document.querySelector('.testimonials-dots');
-    for (let i = 0; i < totalTestimonials; i++) {
-      const dot = document.createElement('div');
-      dot.className = 'testimonials-dot' + (i === 0 ? ' active' : '');
-      dot.onclick = () => goToTestimonial(i);
-      testimonialsDotsContainer.appendChild(dot);
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'testimonials-dot' + (i === currentTestimonial ? ' active' : '');
+        dot.onclick = () => goToTestimonial(i);
+        testimonialsDotsContainer.appendChild(dot);
+      }
     }
 
     function moveTestimonials(direction) {
       currentTestimonial += direction;
-      if (currentTestimonial < 0) currentTestimonial = Math.ceil(totalCards / cardsPerView) - 1;
-      if (currentTestimonial >= Math.ceil(totalCards / cardsPerView)) currentTestimonial = 0;
+      if (currentTestimonial < 0) currentTestimonial = totalPages - 1;
+      if (currentTestimonial >= totalPages) currentTestimonial = 0;
       updateTestimonials();
       resetAutoTestimonial();
     }
@@ -732,6 +735,10 @@
       clearInterval(autoTestimonialInterval);
       autoTestimonialInterval = setInterval(autoTestimonial, 6000);
     }
+
+    // Initialiser
+    updateCardsPerView();
+    window.addEventListener('resize', updateCardsPerView);
 
     // Démarrer l'auto-slide
     resetAutoTestimonial();
