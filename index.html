@@ -45,6 +45,9 @@
   <meta name="geo.position" content="46.8182;8.2275" />
   <meta name="ICBM" content="46.8182, 8.2275" />
 
+  <!-- Tally Popup Script -->
+  <script src="https://tally.so/widgets/embed.js"></script>
+
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 
@@ -924,8 +927,7 @@
         </div>
 
         <div class="lead-form">
-          <input type="email" id="leadEmail" placeholder="Votre email professionnel" class="lead-input" required>
-          <button onclick="downloadLeadMagnet()" class="btn btn-primary btn-large"
+          <button onclick="openEbookPopup()" class="btn btn-primary btn-large"
             style="margin-top: 15px; width: 100%; max-width: 400px;">
             📥 Télécharger Gratuitement
           </button>
@@ -1028,51 +1030,9 @@
   </style>
 
   <script>
-    function downloadLeadMagnet() {
-      const email = document.getElementById('leadEmail').value;
-
-      if (!email || !email.includes('@')) {
-        alert('⚠️ Veuillez entrer une adresse email valide');
-        return;
-      }
-
-      // Télécharger le PDF immédiatement
-      const link = document.createElement('a');
-      link.href = 'guide-no-code-geniuslab.pdf';
-      link.download = 'guide-no-code-geniuslab.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // Tracker l'événement dans GA4
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'lead_magnet_download', {
-          'email': email,
-          'guide_name': 'Entrepreneur Sans Budget Tech'
-        });
-      }
-
-      // Marquer que l'utilisateur a téléchargé l'ebook (évite le pop-up de sortie)
-      localStorage.setItem('ebookDownloaded', 'true');
-      localStorage.setItem('exitPopupShown', 'true'); // Désactiver le pop-up de sortie
-
-      // Message de confirmation
-      alert(`✅ Téléchargement en cours !\n\nMerci ${email}, votre guide "Entrepreneur Sans Budget Tech" est en cours de téléchargement.\n\n🎁 BONUS : Vous recevez également 10% de réduction sur la formation avec le code GENIUS10 !`);
-
-
-
-      // Réinitialiser le formulaire
-      document.getElementById('leadEmail').value = '';
-
-      // Envoyer à Zapier pour segmentation (COLD LEAD - Ebook)
-      fetch('https://hooks.zapier.com/hooks/catch/25826457/uajeacc/', {
-        method: 'POST',
-        body: JSON.stringify({
-          email: email,
-          lead_type: 'cold_lead_ebook',
-          source: 'lead_magnet_section',
-          guide_name: 'Entrepreneur Sans Budget Tech',
-          timestamp: new Date().toISOString()
+    source: 'lead_magnet_section',
+      guide_name: 'Entrepreneur Sans Budget Tech',
+        timestamp: new Date().toISOString()
         })
       });
     }
