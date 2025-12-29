@@ -6,6 +6,9 @@ on:
     - cron: '0 8 * * 1'
   workflow_dispatch: # Permet déclenchement manuel
 
+permissions:
+  contents: write  # Permission nécessaire pour push
+
 jobs:
   publish:
     runs-on: ubuntu-latest
