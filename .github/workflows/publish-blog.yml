@@ -62,5 +62,11 @@ jobs:
           git config user.name "Blog Auto-Publisher"
           git config user.email "bot@geniuslab.ch"
           git add .
-          git commit -m "Auto-publish: Weekly blog post" || echo "No changes to commit"
-          git push
+          
+          # Vérifier s'il y a des changements avant de commit/push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-publish: Weekly blog post"
+            git push
+          fi
