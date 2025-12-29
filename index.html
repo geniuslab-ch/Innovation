@@ -766,22 +766,21 @@
 
     @media (max-width: 768px) {
       .testimonials-slider-wrapper {
-        padding: 0 5vw;
-        /* Marges latérales pour centrer */
+        padding: 0;
+        /* Pas de padding pour alignement parfait */
         max-width: 100vw;
         overflow: hidden;
       }
 
       .testimonial-card {
-        flex: 0 0 90vw;
-        /* 90% de la largeur de l'écran au lieu de 100% */
-        max-width: 90vw;
-        padding: 20px 15px;
+        flex: 0 0 100vw;
+        /* Une carte = toute la largeur de l'écran */
+        max-width: 100vw;
+        padding: 20px;
+        /* Padding interne pour le contenu */
         box-sizing: border-box;
         min-height: auto;
         /* Permettre hauteur flexible */
-        margin: 0 auto;
-        /* Centrer la carte */
       }
 
       .testimonial-card blockquote {
