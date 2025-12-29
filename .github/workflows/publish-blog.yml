@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true  # Nécessaire pour git push
       
       - name: Setup Node.js
         uses: actions/setup-node@v3
