@@ -657,7 +657,8 @@
 
           <!-- Témoignage 7 - David -->
           <figure class="testimonial-card">
-            <blockquote>"Le ROI est incroyable : 300 CHF investis, et j'ai économisé plus de 10'000 CHF en
+            <blockquote>"Le ROI est incroyable : <span class="dynamic-price" data-price-base="300"
+                data-price-type="regular">300 CHF</span> investis, et j'ai économisé plus de 10'000 CHF en
               développement. Sans parler du temps gagné. C'est l'investissement le plus rentable que j'ai fait."
             </blockquote>
             <figcaption>— David K.<br><span>Entrepreneur tech</span></figcaption>
@@ -1581,7 +1582,7 @@
         <div class="info-card">
           <div class="info-icon">💰</div>
           <h3>Investissement</h3>
-          <p><strong>300 CHF</strong></p>
+          <p><strong class="dynamic-price" data-price-base="300" data-price-type="regular">300 CHF</strong></p>
           <p class="info-detail">Tarif unique pour la formation complète</p>
         </div>
       </div>
@@ -1744,6 +1745,7 @@
   </script>
   <!--End of Tawk.to Script-->
 
+  <script src="pricing.js"></script>
   <script src="script.js"></script>
   <script>
     // Load all Tally embeds on the page
@@ -1771,8 +1773,8 @@
       </div>
 
       <div class="exit-price">
-        <span class="old-price">300 CHF</span>
-        <span class="new-price">270 CHF</span>
+        <span class="old-price dynamic-price" data-price-base="300" data-price-type="regular">300 CHF</span>
+        <span class="new-price dynamic-price" data-price-base="300" data-price-type="discounted">270 CHF</span>
         <span class="discount-badge">-10%</span>
       </div>
 
