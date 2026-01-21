@@ -4,7 +4,7 @@
  */
 
 // Configuration - UPDATE THIS URL after deploying the worker
-const WORKER_URL = 'https://geniuslab-stripe-checkout.YOUR-SUBDOMAIN.workers.dev/create-checkout-session';
+const WORKER_URL = 'https://geniuslab-stripe-checkout.ai-ikigai.workers.dev/create-checkout-session';
 
 /**
  * Get current currency from localStorage or default to CHF
