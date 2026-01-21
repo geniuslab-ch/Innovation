@@ -218,11 +218,22 @@ function setupDateSelectionListeners() {
  */
 function initDateSelector() {
     console.log('[Date Selector] Initializing...');
+    const container = document.getElementById('date-selector-container');
+
+    if (!container) {
+        console.warn('[Date Selector] Container not found, will retry when section is shown');
+        return false;
+    }
+
     renderDateSelector();
     console.log('[Date Selector] Initialized successfully');
+    return true;
 }
 
-// Initialize when DOM is ready
+// Make initDateSelector available globally for manual triggering
+window.initDateSelector = initDateSelector;
+
+// Try to initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initDateSelector);
 } else {

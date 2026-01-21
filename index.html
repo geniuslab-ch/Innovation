@@ -1777,6 +1777,13 @@
             if (dateSection) {
               dateSection.style.display = 'block';
               dateSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+              // Initialize date selector now that section is visible
+              if (typeof window.initDateSelector === 'function') {
+                window.initDateSelector();
+              } else {
+                console.error('[GeniusLab] initDateSelector not found');
+              }
             }
           }, 2500);
         },
