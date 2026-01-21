@@ -178,55 +178,24 @@
                 <!-- Payment Form -->
                 <div class="payment-form-container">
                     <div class="payment-card">
-                        <h2>Choisissez votre format</h2>
-                        <p class="payment-description">Sélectionnez le format qui vous convient le mieux. Même contenu,
-                            même qualité, même prix !</p>
+                        <h2>Votre sélection</h2>
+                        <p class="payment-description">Vérifiez les détails de votre session avant de finaliser le
+                            paiement.</p>
 
-                        <!-- Format Selection -->
-                        <div class="format-selection">
-
-                            <!-- Présentiel -->
-                            <div class="format-option">
-                                <div class="format-option-header">
-                                    <span class="format-icon">📍</span>
-                                    <h3>Présentiel</h3>
-                                </div>
-                                <div class="format-option-details">
-                                    <p><strong>⏰ Samedi 9h-13h</strong></p>
-                                    <p>📍 Yverdon, Fribourg, Lausanne ou Genève</p>
-                                    <ul>
-                                        <li>✓ Networking direct</li>
-                                        <li>✓ Matériel fourni</li>
-                                        <li>✓ Café & collations</li>
-                                    </ul>
-                                </div>
-                                <a href="https://buy.stripe.com/8x228saYr6O70C32Xw2go00"
-                                    class="btn btn-primary btn-large btn-full format-btn">
-                                    Choisir Présentiel - 300 CHF →
-                                </a>
+                        <!-- Selection Summary (dynamically populated) -->
+                        <div id="selection-summary" class="selection-summary">
+                            <!-- Will be populated by JavaScript -->
+                            <div class="loading-message">
+                                <div class="spinner"></div>
+                                <p>Chargement de votre sélection...</p>
                             </div>
+                        </div>
 
-                            <!-- À distance -->
-                            <div class="format-option">
-                                <div class="format-option-header">
-                                    <span class="format-icon">💻</span>
-                                    <h3>À distance</h3>
-                                </div>
-                                <div class="format-option-details">
-                                    <p><strong>⏰ Mercredi 18h-22h</strong></p>
-                                    <p>💻 Google Meet (accessible partout)</p>
-                                    <ul>
-                                        <li>✓ Depuis chez vous</li>
-                                        <li>✓ Session enregistrée</li>
-                                        <li>✓ Support en ligne</li>
-                                    </ul>
-                                </div>
-                                <a href="https://buy.stripe.com/dRmfZi9UnegzdoP41A2go01"
-                                    class="btn btn-primary btn-large btn-full format-btn">
-                                    Choisir À distance - 300 CHF →
-                                </a>
-                            </div>
-
+                        <!-- Payment Button -->
+                        <div id="payment-button-container" style="display: none;">
+                            <a id="stripe-payment-link" href="#" class="btn btn-primary btn-large btn-full">
+                                Finaliser le paiement - <span id="payment-amount">300 CHF</span> →
+                            </a>
                         </div>
 
                         <div class="payment-security">
@@ -345,6 +314,233 @@
             }
         }
     </style>
+
+        /* Selection Summary Styles */
+        .selection-summary {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(34, 211, 238, 0.06));
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .selection-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .selection-icon {
+            font-size: 3rem;
+        }
+
+        .selection-title h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, #a855f7, #d946ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .selection-subtitle {
+            margin: 0;
+            color: rgba(249, 250, 251, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .selection-details {
+            display: grid;
+            gap: 15px;
+        }
+
+        .selection-detail-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(168, 85, 247, 0.05);
+            border-radius: 10px;
+        }
+
+        .selection-detail-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .selection-detail-content strong {
+            display: block;
+            margin-bottom: 5px;
+            color: rgba(249, 250, 251, 0.95);
+            font-size: 1.05rem;
+        }
+
+        .selection-detail-content p {
+            margin: 0;
+            color: rgba(249, 250, 251, 0.8);
+            line-height: 1.6;
+        }
+
+        .loading-message {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 20px;
+            border: 4px solid rgba(168, 85, 247, 0.2);
+            border-top-color: #a855f7;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-message p {
+            color: rgba(249, 250, 251, 0.7);
+        }
+
+        .no-selection-message {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .no-selection-message h3 {
+            color: rgba(249, 250, 251, 0.9);
+            margin-bottom: 15px;
+        }
+
+        .no-selection-message p {
+            color: rgba(249, 250, 251, 0.7);
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <script>
+        // Stripe payment links
+        const STRIPE_LINKS = {
+            'Présentiel': 'https://buy.stripe.com/8wW28saYr6O70C32Xw2go00',
+            'Google Meet': 'https://buy.stripe.com/dRmfZi9UnegzdoP41A2go01'
+        };
+
+        // Load selected date from localStorage
+        function loadSelectedDate() {
+            try {
+                const selectedDateStr = localStorage.getItem('geniuslab_selected_date');
+                
+                if (!selectedDateStr) {
+                    showNoSelectionMessage();
+                    return;
+                }
+
+                const selectedDate = JSON.parse(selectedDateStr);
+                console.log('[Payment] Loaded selected date:', selectedDate);
+                
+                displayDateSummary(selectedDate);
+                setupPaymentButton(selectedDate);
+                
+            } catch (error) {
+                console.error('[Payment] Error loading selected date:', error);
+                showNoSelectionMessage();
+            }
+        }
+
+        // Display the date summary
+        function displayDateSummary(dateInfo) {
+            const container = document.getElementById('selection-summary');
+            
+            // Format the date in French
+            const dateObj = new Date(dateInfo.date);
+            const formattedDate = dateObj.toLocaleDateString('fr-FR', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            const icon = dateInfo.type === 'Présentiel' ? '📍' : '💻';
+            
+            const html = `
+                <div class="selection-header">
+                    <span class="selection-icon">${icon}</span>
+                    <div class="selection-title">
+                        <h3>${dateInfo.type}</h3>
+                        <p class="selection-subtitle">Votre session de formation</p>
+                    </div>
+                </div>
+                
+                <div class="selection-details">
+                    <div class="selection-detail-row">
+                        <span class="selection-detail-icon">📅</span>
+                        <div class="selection-detail-content">
+                            <strong>Date de la formation</strong>
+                            <p>${formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1)}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="selection-detail-row">
+                        <span class="selection-detail-icon">⏰</span>
+                        <div class="selection-detail-content">
+                            <strong>Horaires</strong>
+                            <p>${dateInfo.time}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="selection-detail-row">
+                        <span class="selection-detail-icon">${icon}</span>
+                        <div class="selection-detail-content">
+                            <strong>Format</strong>
+                            <p>${dateInfo.type === 'Présentiel' ? 'En présentiel (lieu confirmé par email)' : 'À distance via Google Meet (lien envoyé 48h avant)'}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+        }
+
+        // Setup payment button with correct Stripe link
+        function setupPaymentButton(dateInfo) {
+            const buttonContainer = document.getElementById('payment-button-container');
+            const paymentLink = document.getElementById('stripe-payment-link');
+            
+            // Get the correct Stripe link based on format
+            const stripeUrl = STRIPE_LINKS[dateInfo.type];
+            
+            if (stripeUrl) {
+                paymentLink.href = stripeUrl;
+                buttonContainer.style.display = 'block';
+                
+                console.log('[Payment] Payment button configured for:', dateInfo.type);
+            } else {
+                console.error('[Payment] No Stripe link found for type:', dateInfo.type);
+            }
+        }
+
+        // Show message when no date is selected
+        function showNoSelectionMessage() {
+            const container = document.getElementById('selection-summary');
+            container.innerHTML = `
+                <div class="no-selection-message">
+                    <h3>⚠️ Aucune date sélectionnée</h3>
+                    <p>Vous devez d'abord sélectionner une date de formation avant de procéder au paiement.</p>
+                    <a href="index.html#formulaire" class="btn btn-primary">
+                        Retour à la sélection de date
+                    </a>
+                </div>
+            `;
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', loadSelectedDate);
+    </script>
 </body>
 
 </html>
